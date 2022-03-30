@@ -12,3 +12,4 @@ runs:
       shell: bash
 
     - run: echo ${{ inputs.who_say_hello }} helloworld
+      shell: bash
