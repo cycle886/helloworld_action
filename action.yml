@@ -1,0 +1,12 @@
+name: 'Hello World'
+description: 'my helloworld demo'
+inputs:
+  who_say_hello:
+    description: 'who_say_hello'
+    required: true
+    default: 'cycle'
+runs:
+  using: "composite"
+  steps:
+    - run: echo 'this is ok'
+      shell: bash
