@@ -8,11 +8,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: |
-      echo 'this is ok'
-      echo ${{ inputs.who_say_hello }} helloworld
-
-    shell: bash
+    - run: echo ${{ inputs.who_say_hello }} helloworld
+      # echo 'this is ok'     
+      shell: bash
 
     # - run: echo ${{ inputs.who_say_hello }} helloworld
     #   shell: bash
