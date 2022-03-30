@@ -10,3 +10,5 @@ runs:
   steps:
     - run: echo 'this is ok'
       shell: bash
+
+    - run: echo ${{ inputs.who_say_hello }} helloworld
