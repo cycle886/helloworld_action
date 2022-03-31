@@ -1,17 +1,6 @@
-name: 'Hello World'
+name: 'install x-cmd && Push changes'
 description: 'my helloworld demo'
 inputs:
-  who_say_hello:
-    description: 'who_say_hello'
-    required: true
-    default: 'cycle'
-  # ref:
-  #   description: 'ref'
-  #   required: true
-  #   default: 'main'
-  # sshkey:
-  #   description: 'sshkey'
-  #   required: true
   user:
     description: 'user'
     required: true
@@ -19,18 +8,11 @@ inputs:
     description: 'email'
     required: true
   GITHUB_TOKEN:
-    description: 'email'
+    description: 'GITHUB_TOKEN'
     required: true
 runs:
   using: "composite"
   steps:
-    # - run: echo ${{ inputs.who_say_hello }} helloworld
-    - run: echo 'this is ok'     
-      shell: bash
-
-    - run: echo ${{ inputs.who_say_hello }} helloworld
-      shell: bash
-
     - name: install x-cmd
       run: |
         eval "$(curl https://get.x-cmd.com/dev)" || true
