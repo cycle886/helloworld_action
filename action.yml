@@ -26,7 +26,7 @@ runs:
       shell: bash
 
     - run: eval "$(curl https://get.x-cmd.com/dev)" || true
-    #   shell: bash
+      shell: bash
 
     - run: echo ${{github.path}}
       shell: bash
