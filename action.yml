@@ -29,3 +29,4 @@ runs:
     #   shell: bash
 
     - run: echo ${{github.action_path}}
+      shell: bash
