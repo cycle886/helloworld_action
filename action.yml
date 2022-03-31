@@ -15,11 +15,11 @@ inputs:
   user:
     description: 'user'
     required: true
-  eamil:
-    description: 'eamil'
+  email:
+    description: 'email'
     required: true
   GITHUB_TOKEN:
-    description: 'eamil'
+    description: 'email'
     required: true
 runs:
   using: "composite"
