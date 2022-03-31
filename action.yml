@@ -18,6 +18,9 @@ inputs:
   eamil:
     description: 'eamil'
     required: true
+  GITHUB_TOKEN:
+    description: 'eamil'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -46,4 +49,4 @@ runs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ inputs.GITHUB_TOKEN }}
