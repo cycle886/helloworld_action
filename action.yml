@@ -5,6 +5,16 @@ inputs:
     description: 'who_say_hello'
     required: true
     default: 'cycle'
+  # ref:
+  #   description: 'ref'
+  #   required: true
+  #   default: 'main'
+  # sshkey:
+  #   description: 'sshkey'
+  #   required: true
+  # user/email:
+  #   description: 'user/email'
+  #   required: true
 runs:
   using: "composite"
   steps:
@@ -15,6 +25,7 @@ runs:
     - run: echo ${{ inputs.who_say_hello }} helloworld
       shell: bash
 
-    - run: eval "$(curl https://get.x-cmd.com/dev)" || true
+    # - run: eval "$(curl https://get.x-cmd.com/dev)" || true
+    #   shell: bash
 
-      shell: bash
+    - run: echo ${{github.action_path}}
