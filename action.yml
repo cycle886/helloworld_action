@@ -12,9 +12,9 @@ inputs:
   # sshkey:
   #   description: 'sshkey'
   #   required: true
-  # user/email:
-  #   description: 'user/email'
-  #   required: true
+  user/email:
+    description: 'user/email'
+    required: true
 runs:
   using: "composite"
   steps:
@@ -25,8 +25,22 @@ runs:
     - run: echo ${{ inputs.who_say_hello }} helloworld
       shell: bash
 
-    - run: eval "$(curl https://get.x-cmd.com/dev)" || true
+    - name: install x-cmd
+      run: |
+      eval "$(curl https://get.x-cmd.com/dev)" || true
+      ___X_CMD_IN_CHINA_NET=
       shell: bash
 
-    - run: echo ${{github.path}}
-      shell: bash
+    - name: commit
+      run: |
+      pwd
+      echo "测试" >> README.md
+      git config --global user.email ${{ inputs.user/email#*/ }}
+      git config --global user.name ${{ inputs.user/email%/* }}
+      git add .
+      git commit -m "update" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
