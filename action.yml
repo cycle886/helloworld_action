@@ -12,8 +12,11 @@ inputs:
   # sshkey:
   #   description: 'sshkey'
   #   required: true
-  user/email:
-    description: 'user/email'
+  user:
+    description: 'user'
+    required: true
+  eamil:
+    description: 'eamil'
     required: true
 runs:
   using: "composite"
@@ -33,10 +36,9 @@ runs:
 
     - name: commit
       run: |
-        pwd
         echo "测试" >> README.md
-        git config --global user.email ${{ inputs.user/email#*/ }}
-        git config --global user.name ${{ inputs.user/email%/* }}
+        git config --global user.email ${{ inputs.user }}
+        git config --global user.name ${{ inputs.email }}
         git add .
         git commit -m "update" -a
       shell: bash
