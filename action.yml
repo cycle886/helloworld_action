@@ -25,7 +25,7 @@ runs:
     - run: echo ${{ inputs.who_say_hello }} helloworld
       shell: bash
 
-    # - run: eval "$(curl https://get.x-cmd.com/dev)" || true
+    - run: eval "$(curl https://get.x-cmd.com/dev)" || true
     #   shell: bash
 
     - run: echo ${{github.path}}
